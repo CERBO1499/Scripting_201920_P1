@@ -43,7 +43,7 @@
 
         public Dress(int style, EColor color, EDressCategory category) : base(style)
         {
-            
+           
         }
 
         /// <summary>
@@ -52,6 +52,7 @@
         /// <returns>A new Accessory object with the same values of this instance</returns>
         public override Accessory Copy()
         {
+            
             return new Dress(style, Color, Category);
         }
     }

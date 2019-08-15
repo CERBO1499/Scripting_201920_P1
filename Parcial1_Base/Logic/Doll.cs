@@ -11,14 +11,16 @@ namespace Parcial1_Base.Logic
         /// The accessories collection.
         /// </summary>
         private List<Accessory> accessories = new List<Accessory>();
+        private List<Doll> dolls = new List<Doll>();
 
         /// <summary>
         /// The doll's name
         /// </summary>
         public string Name { get; protected set; }
 
+        
         /// <summary>
-        /// Whether the doll can be included in the contest.
+        /// Whether the doll can b  e included in the contest.
         /// </summary>
         public bool CanParticipate { get => false; }
 
@@ -37,6 +39,9 @@ namespace Parcial1_Base.Logic
         public Doll(string name)
         {
             Name = name;
+            
+            
+           
         }
 
         /// <summary>
@@ -58,6 +63,12 @@ namespace Parcial1_Base.Logic
         /// <returns>True if the doll successfully wore the accessory. False otherwise</returns>
         public bool Wear(Accessory a)
         {
+            if (a!=null)
+            {
+                return true;
+            }  
+
+            
             return false;
         }
 
@@ -67,7 +78,11 @@ namespace Parcial1_Base.Logic
         /// <returns>A new Doll object with the same values of this instance</returns>
         public Doll Copy()
         {
-            return new Doll(Name);
+            if (dolls.Count < 4)
+            {
+                return new Doll(Name);
+            }
+            return null; 
         }
     }
 }
