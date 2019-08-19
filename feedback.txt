@@ -1,0 +1,22 @@
+Feedback
+
+* No hay lógica que satisfaga que en el concurso puedan haber hasta 4 concursantes distintas (0.0 / 0.25)
+* No hay lógica para determinar a la concursante ganadora. (0.0 / 0.25)
+* No hay lógica para determinar que una concursante pueda participar si tiene un vestido equipado (0.0 / 0.5)
+* No hay lógica para equipar ningún accesorio; en consecuencia no hay lógica para determinar si se está equipando un vestido al tener ya uno equipado (0.0 / 0.25)
+* No hay lógica para determinar que un collar puede equiparse con ciertos vestidos (0.0 / 0.25)
+* No hay lógica para incrementar el puntaje de estilo que da un bolso si es equipado con ciertos vestidos (0.0 / 0.25)
+* No hay lógica que limite las pulseras según el vestido equipado (0.0 / 1.0)
+* No hay lógica de desequipamiento de accesorios (0.0 / 0.25); en consecuencia, tampoco hay lógica que desequipe todos los accesorios si el vestido es desequipado (0.0 / 0.5)
+
+Total funcionalidad: 0.0 / 3.5
+
+Diseño orientado a objetos:
+* Por qué una lista de Doll en Doll.cs? Ese script representa a cada una. Ojo a la lógica: Una instancia de Doll contiene múltiples instancias de Doll?
+* Doll.Copy() no tiene nada que ver con el problema. Por eso, la validación de las 4 concursantes es inválida ahí; además, esa modificación retorna null siempre que cada instancia de Doll no tenga 4 concursantes.  Ojo a la lógica.
+* Dado que no hay lógica que satisfaga la funcionalidad, no puede haber consideración al diseño orientado a objetos aplicado (0.0 / 1.5)
+
+Total diseño orientado a objetos: 0.0 / 1.5
+
+
+Total: (0.0 / 5.0)
