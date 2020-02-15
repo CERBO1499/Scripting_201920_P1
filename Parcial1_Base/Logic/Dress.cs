@@ -31,19 +31,23 @@
             Pink
         }
 
+        private EColor colorChikito;
+        private EDressCategory categoryChikita;
+
         /// <summary>
         /// This dress' color
         /// </summary>
-        public EColor Color { get; protected set; }
+        public EColor Color { get => colorChikito; protected set => colorChikito = value; }
 
         /// <summary>
         /// This dress' category
         /// </summary>
-        public EDressCategory Category { get; protected set; }
+        public EDressCategory Category { get => categoryChikita; protected set => categoryChikita = value; }
 
         public Dress(int style, EColor color, EDressCategory category) : base(style)
         {
-           
+            colorChikito = color;
+            categoryChikita = category;
         }
 
         /// <summary>
@@ -52,7 +56,6 @@
         /// <returns>A new Accessory object with the same values of this instance</returns>
         public override Accessory Copy()
         {
-            
             return new Dress(style, Color, Category);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Parcial1_Base.Logic
 {
@@ -22,7 +23,14 @@ namespace Parcial1_Base.Logic
         public bool AddContestant(Doll d)
         {
             bool result = false;
-
+            if(TotalContestants < 4)
+            {
+                if (d.CanParticipate)
+                {
+                    result = true;
+                    contestants.Add(d);
+                }
+            }
             return result;
         }
 
@@ -50,7 +58,8 @@ namespace Parcial1_Base.Logic
                     break;
 
                 default:
-                    // Sorts the contestants and return the one with the highest style score.
+                    contestants.OrderBy(x => x.Style);
+                    winner = contestants[TotalContestants - 1];
                     break;
             }
 

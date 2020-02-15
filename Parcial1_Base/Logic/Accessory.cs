@@ -10,10 +10,12 @@
         /// </summary>
         protected int style;
 
+        float styleMod;
+
         /// <summary>
         /// The style score bonus percentage, if any applies.
         /// </summary>
-        protected virtual float StyleMod { get => 0; }
+        public virtual float StyleMod { protected get => styleMod; set => styleMod = value; }
 
         /// <summary>
         /// Returns the Style score for this accessory
@@ -21,7 +23,7 @@
         public virtual int Style
         {
             // Returns the base style score and any style bonus, if any applies.
-            get => (int)(System.Math.Round(style * StyleMod));
+            get => (int)(System.Math.Round(style + style * StyleMod));
 
             // Sets the base style score for this accessory.
             protected set => style = value;
